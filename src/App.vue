@@ -1,6 +1,10 @@
 <template>
   <div id="app">
-    <router-view class="main-container">
+    <keep-alive>
+      <router-view class="main-container" v-if="$route.meta.keepAlive">
+      </router-view>
+    </keep-alive>
+    <router-view class="main-container" v-if="!$route.meta.keepAlive">
     </router-view>
   </div>
 </template>
