@@ -1,7 +1,12 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+import http from './utils/http'
+import libs from './libs'
 Vue.config.productionTip = false
+Vue.prototype.$http = http
+Vue.use(libs)
+console.log('http', http)
 import 'amfe-flexible';
 import {
   Button,
@@ -10,7 +15,10 @@ import {
   Collapse,
   CollapseItem,
   ImagePreview,
-  Skeleton
+  Skeleton,
+  Tabbar,
+  TabbarItem,
+  Field
 } from 'vant';
 let comps = [
   Button,
@@ -19,7 +27,10 @@ let comps = [
   Collapse,
   CollapseItem,
   ImagePreview,
-  Skeleton
+  Skeleton,
+  Tabbar,
+  TabbarItem,
+  Field
 ]
 for (let comp of comps) {
   Vue.use(comp)
@@ -29,13 +40,17 @@ router.beforeEach((to, from, next) => {
     document.title = to.meta.title
   }
   if (to.matched.some(record => record.meta.requireAuth)) {
-    next({
-      path: '/login',
-      query: {
-        redirect: to.name,
-        ...to.query
-      }
-    })
+    if (!window.localStorage.getItem('token')) {
+      next({
+        path: '/login',
+        query: {
+          redirect: to.name,
+          ...to.query
+        }
+      })
+    } else {
+      next()
+    }
   } else {
     next()
   }

@@ -16,8 +16,6 @@
 
 ![vant-app.jpeg](https://upload-images.jianshu.io/upload_images/4678292-1f400e8ecc56c486.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-### 项目目录结构的介绍
-
 ## Project setup, 运行的基本命令
 ```
 npm install
@@ -48,6 +46,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## 项目的地址
 [vant-app](https://github.com/nieyulin112/vant-app)
+
 ## 总结
 
 因为项目刚刚构建起来，后面还会持续更新，实际使用过程中一定还有很多问题，如果文章中有错误希望能够被指正，一起成长

@@ -9,8 +9,9 @@ export default [{
   name: 'home',
   component: homeIndex,
   meta: {
-    title: '主页',
-    requireAuth: false,
-    keepAlive: false
+    title: '首页',
+    requireAuth: true,
+    keepAlive: false,
+    footer: true
   }
 }]

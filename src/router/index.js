@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import homeRouter from './home.router.js'
+import shopRouter from './shop.router.js'
+import friendsRouter from './friends.router.js'
+import meRouter from './me.router.js'
 Vue.use(Router)
 const router = new Router({
   mode: 'history',
@@ -10,10 +13,14 @@ const router = new Router({
       component: () => import('../views/login/index'),
       meta: {
         keepAlive: false,
-        title: '登录'
+        title: '登录',
+        footer: false
       }
     },
-    ...homeRouter
+    ...homeRouter,
+    ...shopRouter,
+    ...friendsRouter,
+    ...meRouter
   ]
 })
 export default router
