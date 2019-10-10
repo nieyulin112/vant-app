@@ -26,13 +26,16 @@ export default {
     }
   },
   mounted() {
-    if (this.$router.name === 'home') {
+  },
+  // 处理全局的footer
+  beforeUpdate() {
+    if (this.$route.name === 'home') {
       this.active = 0
-    } else if (this.$router.name === 'shop') {
+    } else if (this.$route.name === 'shop') {
       this.active = 1
-    } else if (this.$router.name === 'friends') {
+    } else if (this.$route.name === 'friends') {
       this.active = 2
-    } else if (this.$router.name === 'me') {
+    } else if (this.$route.name === 'me') {
       this.active = 3
     }
   }

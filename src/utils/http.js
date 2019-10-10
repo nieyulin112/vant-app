@@ -5,7 +5,7 @@ import axios from 'axios'
  */
 (function () {
   /* api前缀 */
-  axios.defaults.baseURL = process.env.apiUrl
+  axios.defaults.baseURL = process.env.VUE_APP_BASEURL
   /* 请求超时 */
   axios.defaults.timeout = 10 * 1000
 
@@ -15,11 +15,13 @@ import axios from 'axios'
   /* 请求拦截 */
   axios.interceptors.request.use(config => {
     if (config.loading === false) {
+      console.log('console1')
     } else {
       config = Object.assign({
         loading: 'body'
       }, config)
       if (config.loading) {
+        console.log('console')
       }
     }
     config.headers['access-token'] = window.localStorage.getItem('token') || ''
@@ -50,6 +52,7 @@ import axios from 'axios'
       }
       return Promise.reject(error.response.data)
     } else {
+      console.log(2222)
     }
   })
 })()
@@ -103,17 +106,16 @@ const ajax = (config) => {
  * @param {Object} respnose
  */
 const none = (response) => {
-  loadings.hide()
-  // 在此处理后台反馈的错误码
   if (response) {
-    if (response.success === 1) {
-      if (response.errorCode) {
-        return Promise.reject(response)
-      }
-      return Promise.resolve(response)
-    } else {
-      return Promise.reject(response)
-    }
+    return Promise.resolve(response)
+    // if (response.success === 1) {
+    //   if (response.errorCode) {
+    //     return Promise.reject(response)
+    //   }
+    //   return Promise.resolve(response)
+    // } else {
+    //   return Promise.reject(response)
+    // }
   }
 }
 

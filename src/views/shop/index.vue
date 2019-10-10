@@ -1,22 +1,31 @@
 <template lang="html">
-  <div>
-    商城
+  <div class="shop-index">
+    <h4>商品列表</h4>
+    <img v-for="(img, index) in imageList" v-lazy="img" :key="index">
   </div>
 </template>
 
 <script>
 export default {
-  data: function () {
+  data() {
     return {
+      imageList: [
+        'https://img.yzcdn.cn/vant/apple-1.jpg',
+        'https://img.yzcdn.cn/vant/apple-2.jpg',
+        'https://img.yzcdn.cn/vant/apple-2.jpg',
+        'https://img.yzcdn.cn/vant/apple-2.jpg',
+        'https://img.yzcdn.cn/vant/apple-2.jpg',
+        'https://img.yzcdn.cn/vant/apple-2.jpg'
+      ]
     }
-  },
-  computed: {},
-  ready: function () {},
-  attached: function () {},
-  methods: {},
-  components: {}
+  }
 }
 </script>
 
-<style lang="css">
+<style lang="less" scoped>
+.shop-index {
+  img {
+    width: 100vw;
+  }
+}
 </style>

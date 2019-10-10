@@ -18,7 +18,10 @@ import {
   Skeleton,
   Tabbar,
   TabbarItem,
-  Field
+  Field,
+  Grid,
+  GridItem,
+  Lazyload
 } from 'vant';
 let comps = [
   Button,
@@ -30,7 +33,10 @@ let comps = [
   Skeleton,
   Tabbar,
   TabbarItem,
-  Field
+  Field,
+  Grid,
+  GridItem,
+  Lazyload
 ]
 for (let comp of comps) {
   Vue.use(comp)

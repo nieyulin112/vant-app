@@ -5,17 +5,18 @@
       avatar
       :row="20"
       :loading="loading">
-      <div>
-        <van-pull-refresh v-model="isLoading" @refresh="onRefresh">
-          <p>刷新次数: {{ count }}</p>
-        </van-pull-refresh>
-        <div>
-          <van-collapse v-model="activeNames">
-            <van-collapse-item title="标题1" value="右侧" name="1">内容</van-collapse-item>
-            <van-collapse-item title="标题2" value="右侧" name="2">内容</van-collapse-item>
-          </van-collapse>
-        </div>
-      </div>
+      <van-grid>
+        <van-grid-item icon="refund-o" text="转账"/>
+        <van-grid-item icon="balance-o" text="商家服务"/>
+        <van-grid-item icon="gem-o" text="城市服务"/>
+        <van-grid-item icon="diamond-o" text="芝麻信用"/>
+      </van-grid>
+      <van-grid>
+        <van-grid-item icon="refund-o" text="蚂蚁森林"/>
+        <van-grid-item icon="balance-o" text="蚂蚁保险"/>
+        <van-grid-item icon="gem-o" text="生活缴费"/>
+        <van-grid-item icon="diamond-o" text="体育服务"/>
+      </van-grid>
     </van-skeleton>
   </div>
 </template>
@@ -25,7 +26,6 @@ export default {
   data () {
     return {
       count: 0,
-      isLoading: false,
       activeNames: ['1'],
       show: true,
       images: [

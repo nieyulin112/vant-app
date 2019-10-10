@@ -30,7 +30,7 @@ export default {
   methods: {
     login() {
       this.$api.login.getAppid().then(res => {
-        window.localStorage.setItem('token', this.username)
+        window.localStorage.setItem('token', res.data.name)
         if (this.$route.query.redirect) {
           this.$router.push({
             name: this.$route.query.redirect
@@ -40,8 +40,6 @@ export default {
             name: 'home'
           })
         }
-      }).catch(error => {
-        console.log('error', error)
       })
     }
   }
