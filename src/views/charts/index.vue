@@ -32,13 +32,15 @@ export default {
       container.appendChild(this.renderer.domElement)
     },
     animate() {
-      requestAnimationFrame(this.animate)
+      // 使用动画效果
+      window.requestAnimationFrame(this.animate)
       this.mesh.rotation.x += 0.01
       this.mesh.rotation.y += 0.02
       this.renderer.render(this.scene, this.camera)
     }
   },
   mounted() {
+    console.log(Three)
     this.init()
     this.animate()
   }
