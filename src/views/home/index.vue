@@ -5,6 +5,11 @@
       avatar
       :row="20"
       :loading="loading">
+      <van-swipe :autoplay="3000" class="home-swipe">
+        <van-swipe-item v-for="(image, index) in imageList" :key="index">
+          <img :src="image">
+        </van-swipe-item>
+      </van-swipe>
       <van-grid>
         <van-grid-item icon="refund-o" text="转账"/>
         <van-grid-item icon="balance-o" text="商家服务"/>
@@ -57,5 +62,10 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="less" scoped>
+.home-swipe {
+  img {
+    width: 100vw;
+  }
+}
 </style>

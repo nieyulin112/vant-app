@@ -21,7 +21,9 @@ import {
   Field,
   Grid,
   GridItem,
-  Lazyload
+  Lazyload,
+  swipe,
+  swipeItem
 } from 'vant';
 let comps = [
   Button,
@@ -36,7 +38,9 @@ let comps = [
   Field,
   Grid,
   GridItem,
-  Lazyload
+  Lazyload,
+  swipe,
+  swipeItem
 ]
 for (let comp of comps) {
   Vue.use(comp)
