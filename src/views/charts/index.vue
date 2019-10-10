@@ -1,7 +1,6 @@
 <template lang="html">
   <div class="charts-index">
     <div id="container">
-
     </div>
   </div>
 </template>
@@ -22,6 +21,7 @@ export default {
       let container = document.getElementById('container');
       this.camera = new Three.PerspectiveCamera(70, container.clientWidth/container.clientHeight, 0.01, 10)
       this.camera.position.z = 1
+      this.camera.position.y = 0.01
       this.scene = new Three.Scene()
       let geometry = new Three.BoxGeometry(0.2, 0.2, 0.2)
       let material = new Three.MeshNormalMaterial()
