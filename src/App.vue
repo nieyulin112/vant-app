@@ -12,6 +12,7 @@
       </van-tabbar-item>
       <van-tabbar-item icon="search" replace to="/shop">商城</van-tabbar-item>
       <van-tabbar-item icon="friends-o" replace to="/friends">朋友</van-tabbar-item>
+      <van-tabbar-item icon="cluster-o" replace to="/charts">3D</van-tabbar-item>
       <van-tabbar-item icon="setting-o" replace to="/me">我的</van-tabbar-item>
     </van-tabbar>
   </div>
@@ -35,8 +36,10 @@ export default {
       this.active = 1
     } else if (this.$route.name === 'friends') {
       this.active = 2
-    } else if (this.$route.name === 'me') {
+    } else if (this.$route.name === 'charts') {
       this.active = 3
+    }else if (this.$route.name === 'me') {
+      this.active = 4
     }
   }
 }

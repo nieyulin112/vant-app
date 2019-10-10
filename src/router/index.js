@@ -4,6 +4,7 @@ import homeRouter from './home.router.js'
 import shopRouter from './shop.router.js'
 import friendsRouter from './friends.router.js'
 import meRouter from './me.router.js'
+import chartsRouter from './charts.router.js'
 Vue.use(Router)
 const router = new Router({
   mode: 'history',
@@ -20,7 +21,8 @@ const router = new Router({
     ...homeRouter,
     ...shopRouter,
     ...friendsRouter,
-    ...meRouter
+    ...meRouter,
+    ...chartsRouter
   ]
 })
 export default router
