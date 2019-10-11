@@ -12,7 +12,8 @@
             <van-cell
               v-for="item in list"
               :key="item"
-              :title="item"/>
+              :title="item">
+            </van-cell>
         </van-list>
       </van-pull-refresh>
     </div>
