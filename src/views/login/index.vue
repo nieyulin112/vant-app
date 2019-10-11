@@ -29,18 +29,16 @@ export default {
   },
   methods: {
     login() {
-      this.$api.login.getAppid().then(res => {
-        window.localStorage.setItem('token', res.data.name)
-        if (this.$route.query.redirect) {
-          this.$router.push({
-            name: this.$route.query.redirect
-          })
-        } else {
-          this.$router.push({
-            name: 'home'
-          })
-        }
-      })
+      window.localStorage.setItem('token', this.username)
+      if (this.$route.query.redirect) {
+        this.$router.push({
+          name: this.$route.query.redirect
+        })
+      } else {
+        this.$router.push({
+          name: 'home'
+        })
+      }
     }
   }
 }

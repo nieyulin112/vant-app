@@ -23,7 +23,12 @@ import {
   GridItem,
   Lazyload,
   swipe,
-  swipeItem
+  swipeItem,
+  IndexBar,
+  IndexAnchor,
+  Cell,
+  Overlay,
+  List
 } from 'vant';
 let comps = [
   Button,
@@ -40,7 +45,12 @@ let comps = [
   GridItem,
   Lazyload,
   swipe,
-  swipeItem
+  swipeItem,
+  IndexBar,
+  IndexAnchor,
+  Cell,
+  Overlay,
+  List
 ]
 for (let comp of comps) {
   Vue.use(comp)

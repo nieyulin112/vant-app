@@ -47,6 +47,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ## 项目的地址
 [vant-app](https://github.com/nieyulin112/vant-app)
 
+vant这款ui组件还是很好用的，大大的提高了公司开发业务的效率
+
 ## 总结
 
 因为项目刚刚构建起来，后面还会持续更新，实际使用过程中一定还有很多问题，如果文章中有错误希望能够被指正，一起成长
