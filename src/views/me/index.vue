@@ -2,6 +2,9 @@
   <div class="me-index">
     <!-- <van-overlay :show="show" @click="show = false" z-index="1000"/>
     <van-button type="primary" text="显示遮罩层" @click="show = true" /> -->
+    <van-sticky :offset-top="0">
+      <van-button type="info">吸顶距离</van-button>
+    </van-sticky>
     <div class="list-caontainer">
       <van-pull-refresh v-model="isLoading" @refresh="onRefresh">
         <van-list

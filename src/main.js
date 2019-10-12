@@ -28,7 +28,8 @@ import {
   IndexAnchor,
   Cell,
   Overlay,
-  List
+  List,
+  sticky
 } from 'vant';
 let comps = [
   Button,
@@ -50,7 +51,8 @@ let comps = [
   IndexAnchor,
   Cell,
   Overlay,
-  List
+  List,
+  sticky
 ]
 for (let comp of comps) {
   Vue.use(comp)
