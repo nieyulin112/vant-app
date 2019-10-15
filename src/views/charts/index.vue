@@ -2,6 +2,9 @@
   <div class="charts-index">
     <div id="container">
     </div>
+    <div @click="skipBall">
+      圆球图形
+    </div>
   </div>
 </template>
 
@@ -45,6 +48,11 @@ export default {
       this.mesh.rotation.y += 0.02
       // 将场景和图形动态的渲染到渲染器上去
       this.renderer.render(this.scene, this.camera)
+    },
+    skipBall() {
+      this.$router.push({
+        name: 'ballIndex'
+      })
     }
   },
   mounted() {
@@ -58,6 +66,7 @@ export default {
 
 <style lang="less" scoped>
 #container {
-  height: 100vh;
+  width: 100vw;
+  height: 80vh;
 }
 </style>

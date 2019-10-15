@@ -3,6 +3,11 @@ const chartsIndex = resolve => {
     resolve(chartsIndex)
   })
 }
+const ballIndex = resolve => {
+  import(/* webpackChunkName: 'ballIndex' */'../views/charts/ball').then(ballIndex => {
+    resolve(ballIndex)
+  })
+}
 
 export default [{
   path: '/charts',
@@ -13,5 +18,15 @@ export default [{
     requireAuth: true,
     keepAlive: false,
     footer: true
+  }
+}, {
+  path: '/ballIndex',
+  name: 'ballIndex',
+  component: ballIndex,
+  meta: {
+    title: '球星酷炫效果',
+    requireAuth: true,
+    keepAlive: false,
+    footer: false
   }
 }]
