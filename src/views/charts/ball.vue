@@ -31,7 +31,9 @@ export default {
       this.camera = new Three.PerspectiveCamera(45, 0.75, 0.1, 10000)
       this.scene = new Three.Scene()
       this.scene.add(this.camera)
-      this.camera.position.z = 300
+      this.camera.position.z = 600
+      this.camera.position.x = 10
+      this.camera.position.y = 10
       this.renderer.setSize(container.clientWidth, container.clientHeight)
       container.appendChild(this.renderer.domElement)
       // 设置球的基本属性
@@ -54,7 +56,7 @@ export default {
     animate() {
       // 使用动画效果，浏览器全新的动画效果
       window.requestAnimationFrame(this.animate)
-      // 设置网格的坐标
+      // 设置网格旋转的位移
       this.mesh.rotation.x += 0.01
       this.mesh.rotation.y += 0.02
       this.mesh.rotation.z += 0.02
