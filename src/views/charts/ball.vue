@@ -2,6 +2,10 @@
   <div class="charts-ball">
     <div id="container">
     </div>
+    <!--图形的处理-->
+    <div class="skipIndex" @click="skipIndex">
+      返回首页
+    </div>
   </div>
 </template>
 
@@ -56,6 +60,11 @@ export default {
       this.mesh.rotation.z += 0.02
       // 将场景和图形动态的渲染到渲染器上去
       this.renderer.render(this.scene, this.camera)
+    },
+    skipIndex() {
+      this.$router.push({
+        name: 'charts'
+      })
     }
   }
 }
@@ -64,6 +73,6 @@ export default {
 <style lang="less" scoped>
   #container {
     width: 100vw;
-    height: 100vh;
+    height: 80vh;
   }
 </style>

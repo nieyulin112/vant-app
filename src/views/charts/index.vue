@@ -27,12 +27,19 @@ export default {
       this.camera.position.z = 1
       this.camera.position.y = 0.01
       this.scene = new Three.Scene()
+      // 创建物体
       let geometry = new Three.BoxGeometry(0.2, 0.2, 0.2)
+      // 创建材质
       let material = new Three.MeshNormalMaterial()
+      // 创建光源
+      let spotLight = new Three.SpotLight(0xff0000)
+      spotLight.position.set(30, 25, -2)
+      spotLight.castShadow = true
       // 将图形和材质放入网格中，先放入图形，再放入网格
       this.mesh = new Three.Mesh(geometry, material)
       // 将网格放入场景中
       this.scene.add(this.mesh)
+      this.scene.add(spotLight)
       // 创建web渲染器
       this.renderer = new Three.WebGLRenderer({antialias: true})
       // 设置渲染器的大小
