@@ -4,7 +4,7 @@
     </div>
     <!--图形的处理-->
     <div class="skipIndex" @click="skipIndex">
-      返回首页
+      球星返回首页
     </div>
   </div>
 </template>
