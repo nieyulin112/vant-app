@@ -15,7 +15,9 @@ export default {
       scene: null,
       camera: null,
       control: null,
-      camControl: null
+      camControl: null,
+      green: require('../../assets/green.jpeg'),
+      footer: require('../../assets/footer.jpg')
     }
   },
   mounted() {
@@ -35,7 +37,7 @@ export default {
       this.renderer.setSize(window.innerWidth, window.innerHeight)
       this.renderer.shadowMapEnabled = true
       var spotLight = new Three.SpotLight()
-      spotLight.position.set(0, 80, 30)
+      spotLight.position.set(0, 10, 10)
       spotLight.castShadow = true
       this.scene.add(spotLight)
       container.appendChild(this.renderer.domElement)
@@ -47,13 +49,13 @@ export default {
     addFloor() {
       var floorGeom = new Three.PlaneGeometry(100,100,20,20)
       var floorMater = new Three.MeshPhongMaterial()
-      floorMater.map = Three.ImageUtils.loadTexture('http://10.1.26.29:84/assets/textures/06_DIFFUSE.jpg')
+      floorMater.map = Three.ImageUtils.loadTexture(this.green)
       //沿着(S)x,(T)y方向允许纹理重复自己
       floorMater.map.wrapS = floorMater.map.wrapT = Three.REpeatWrapping
       floorMater.map.repeat.set(10,10)
       var floor = new Three.Mesh(floorGeom,floorMater)
       floor.receiveShadow = true
-      floor.rotation.x = -0.5 * Math.PI
+      floor.rotation.x = - 0.5 * Math.PI
       this.scene.add(floor)
     },
     addRail() {
@@ -71,9 +73,9 @@ export default {
       var sphereGeometry = new Three.SphereGeometry(0.8, 25, 25)
       var sphereMaterial = new Three.MeshBasicMaterial({specular: '#a9fcff',emissive: '#006063',shininess: 10})
       var sphere = new Three.Mesh(sphereGeometry, sphereMaterial)
-      sphere.position.set(7,0.8,-1)
+      sphere.position.set(7, 0.8, -1)
       sphere.castShadow = true
-      var texture = new Three.ImageUtils.loadTexture("http://10.1.26.29:84/assets/football.jpg")
+      var texture = new Three.ImageUtils.loadTexture(this.footer)
       sphereMaterial.map = texture
       sphere.name = 'sphere'
       this.scene.add(sphere)
