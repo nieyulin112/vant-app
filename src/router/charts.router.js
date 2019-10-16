@@ -18,6 +18,11 @@ const cylinder = resolve => {
     resolve(cylinder)
   })
 }
+const footerBall = resolve => {
+  import(/* webpackChunkName: 'footerBall' */'../views/charts/footerBall').then(footerBall => {
+    resolve(footerBall)
+  })
+}
 export default [{
   path: '/charts',
   name: 'charts',
@@ -54,6 +59,16 @@ export default [{
   component: cylinder,
   meta: {
     title: '圆锥体酷炫效果',
+    requireAuth: true,
+    keepAlive: false,
+    footer: false
+  }
+}, {
+  path: '/footerBall',
+  name: 'footerBall',
+  component: footerBall,
+  meta: {
+    title: '足球场足球的效果',
     requireAuth: true,
     keepAlive: false,
     footer: false

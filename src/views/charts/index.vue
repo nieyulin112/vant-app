@@ -4,6 +4,7 @@
       <van-cell title="球型动画" is-link to="ballIndex" />
       <van-cell title="正方动画" is-link to="sequreIndex" />
       <van-cell title="圆锥动画" is-link to="cylinder" />
+      <van-cell title="足球动画" is-link to="footerBall" />
     </van-cell-group>
   </div>
 </template>
