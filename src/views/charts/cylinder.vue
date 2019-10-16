@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="charts-sequre">
+  <div class="charts-cylinder">
     <div id="container">
     </div>
   </div>

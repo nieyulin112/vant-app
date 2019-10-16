@@ -13,6 +13,11 @@ const sequreIndex = resolve => {
     resolve(sequreIndex)
   })
 }
+const cylinder = resolve => {
+  import(/* webpackChunkName: 'cylinder' */'../views/charts/cylinder').then(cylinder => {
+    resolve(cylinder)
+  })
+}
 export default [{
   path: '/charts',
   name: 'charts',
@@ -39,6 +44,16 @@ export default [{
   component: sequreIndex,
   meta: {
     title: '正方体酷炫效果',
+    requireAuth: true,
+    keepAlive: false,
+    footer: false
+  }
+}, {
+  path: '/cylinder',
+  name: 'cylinder',
+  component: cylinder,
+  meta: {
+    title: '圆锥体酷炫效果',
     requireAuth: true,
     keepAlive: false,
     footer: false
