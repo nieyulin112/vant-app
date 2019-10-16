@@ -23,7 +23,7 @@ export default {
     // 初始化图形
     init() {
       let container = document.getElementById('container');
-      this.camera = new Three.PerspectiveCamera(45, container.clientWidth/container.clientHeight, 1, 1000)
+      this.camera = new Three.PerspectiveCamera(90, container.clientWidth/container.clientHeight, 1, 1000)
       this.camera.position.z = 700
       this.scene = new Three.Scene()
       this.cylinder = new Three.Mesh(new Three.CylinderGeometry(0, 100, 400, 50, 50, false), new Three.MeshNormalMaterial())
