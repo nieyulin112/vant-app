@@ -8,13 +8,17 @@ const ballIndex = resolve => {
     resolve(ballIndex)
   })
 }
-
+const sequreIndex = resolve => {
+  import(/* webpackChunkName: 'sequreIndex' */'../views/charts/sequre').then(sequreIndex => {
+    resolve(sequreIndex)
+  })
+}
 export default [{
   path: '/charts',
   name: 'charts',
   component: chartsIndex,
   meta: {
-    title: '3d酷炫效果',
+    title: '3d列表',
     requireAuth: true,
     keepAlive: false,
     footer: true
@@ -24,7 +28,17 @@ export default [{
   name: 'ballIndex',
   component: ballIndex,
   meta: {
-    title: '球星酷炫效果',
+    title: '球型酷炫效果',
+    requireAuth: true,
+    keepAlive: false,
+    footer: false
+  }
+}, {
+  path: '/sequreIndex',
+  name: 'sequreIndex',
+  component: sequreIndex,
+  meta: {
+    title: '正方体酷炫效果',
     requireAuth: true,
     keepAlive: false,
     footer: false

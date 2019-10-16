@@ -29,7 +29,8 @@ import {
   Cell,
   Overlay,
   List,
-  sticky
+  sticky,
+  CellGroup
 } from 'vant';
 let comps = [
   Button,
@@ -52,7 +53,8 @@ let comps = [
   Cell,
   Overlay,
   List,
-  sticky
+  sticky,
+  CellGroup
 ]
 for (let comp of comps) {
   Vue.use(comp)

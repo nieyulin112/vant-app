@@ -2,10 +2,6 @@
   <div class="charts-ball">
     <div id="container">
     </div>
-    <!--图形的处理-->
-    <div class="skipIndex" @click="skipIndex">
-      球星返回首页
-    </div>
   </div>
 </template>
 
@@ -75,6 +71,6 @@ export default {
 <style lang="less" scoped>
   #container {
     width: 100vw;
-    height: 80vh;
+    height: 100vh;
   }
 </style>
