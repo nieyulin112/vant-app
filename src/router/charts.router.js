@@ -23,6 +23,11 @@ const footerBall = resolve => {
     resolve(footerBall)
   })
 }
+const line = resolve => {
+  import(/* webpackChunkName: 'line' */'../views/charts/line').then(line => {
+    resolve(line)
+  })
+}
 export default [{
   path: '/charts',
   name: 'charts',
@@ -69,6 +74,16 @@ export default [{
   component: footerBall,
   meta: {
     title: '足球场足球的效果',
+    requireAuth: true,
+    keepAlive: false,
+    footer: false
+  }
+},{
+  path: '/line',
+  name: 'line',
+  component: line,
+  meta: {
+    title: '直线',
     requireAuth: true,
     keepAlive: false,
     footer: false
