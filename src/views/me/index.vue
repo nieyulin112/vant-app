@@ -2,7 +2,7 @@
   <div class="me-index">
     <!-- <van-overlay :show="show" @click="show = false" z-index="1000"/>
     <van-button type="primary" text="显示遮罩层" @click="show = true" /> -->
-    <van-sticky :offset-top="0">
+    <!-- <van-sticky :offset-top="0">
       <van-button type="info">吸顶距离</van-button>
     </van-sticky>
     <div class="list-caontainer">
@@ -19,6 +19,9 @@
             </van-cell>
         </van-list>
       </van-pull-refresh>
+    </div> -->
+    <div id="container">
+
     </div>
   </div>
 </template>
@@ -33,6 +36,14 @@ export default {
       finished: false,
       isLoading: false
     }
+  },
+  mounted() {
+    let marker = new window.AMap.Marker()
+    let map = new window.AMap.Map('container', {
+      resizeEnable: true
+    })
+    console.log('marker', marker)
+    console.log('map', map)
   },
   methods: {
     onRefresh() {
@@ -58,6 +69,11 @@ export default {
 </script>
 
 <style lang="less" scoped>
+#container{
+  width: 100%;
+  z-index: 0;
+  min-height: 100vh;
+}
 .list-caontainer {
   margin-bottom: 1.2rem;
 }
