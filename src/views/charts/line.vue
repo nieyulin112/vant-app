@@ -1,8 +1,5 @@
 <template lang="html">
   <div class="charts-line">
-    <div id="container">
-
-    </div>
   </div>
 </template>
 
@@ -21,61 +18,27 @@ export default {
     }
   },
   mounted() {
-    this.threeStart()
+    this.init()
   },
   methods: {
-    initThree() {
-      this.width = document.getElementById('container').clientWidth
-      this.height = document.getElementById('container').clientHeight
-      this.renderer = new Three.WebGLRenderer({
-        antialias: true
-      })
-      this.renderer.setSize(this.width, this.height)
-      document.getElementById('container').appendChild(this.renderer.domElement)
-      this.renderer.setClearColor(0xfffff, 1.0)
-    },
-    initCamera() {
-      this.camera = new Three.PerspectiveCamera(45, this.width / this.height, 1, 10000)
-      this.camera.position.x = 0
-      this.camera.position.y = 1000
-      this.camera.position.z = 0
-      this.camera.up.x = 0
-      this.camera.up.y = 0
-      this.camera.up.z = 1
-      this.camera.lookAt({
-        x : 0,
-        y : 0,
-        z : 0
-      })
-    },
-    initScene() {
+    init() {
+      this.renderer = new Three.WebGLRenderer()
+      this.renderer.setSize(window.innerWidth, window.innerHeight)
+      document.body.appendChild(this.renderer.domElement)
+      this.camera = new Three.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 500)
+      this.camera.position.set(0, 0, 100)
+      this.camera.lookAt(0, 0, 0)
       this.scene = new Three.Scene()
-    },
-    initLight() {
-      this.light = new Three.DirectionalLight(0xFF0000, 1.0, 0)
-      this.light.position.set(100, 100, 200)
-      this.scene.add(this.light)
-    },
-    initObject() {
+      var material = new Three.LineBasicMaterial({color: 0x0000ff})
       var geometry = new Three.Geometry();
-      geometry.vertices.push(new Three.Vector3(-500, 0, 0))
-      geometry.vertices.push(new Three.Vector3(500, 0, 0))
-      for ( var i = 0; i <= 20; i ++ ) {
-        var line = new Three.Line( geometry, new Three.LineBasicMaterial({ color: 0x000000, opacity: 0.2 }))
-        line.position.z = (i * 50) - 500
-        this.scene.add(line)
-        var ls = new Three.Line(geometry, new Three.LineBasicMaterial({ color: 0x000000, opacity: 0.2 }))
-        line.position.x = ( i * 50 ) - 500
-        line.rotation.y = 90 * Math.PI / 180
-        this.scene.add(ls)
-      }
-    },
-    threeStart() {
-      this.initThree()
-      this.initCamera()
-      this.initScene()
-      this.initLight()
-      this.initObject()
+      geometry.vertices.push(new Three.Vector3(-10, 0, 0))
+      geometry.vertices.push(new Three.Vector3(0, 10, 0))
+      geometry.vertices.push(new Three.Vector3(10, 0, 0))
+      geometry.vertices.push(new Three.Vector3(20, 0, 0))
+      geometry.vertices.push(new Three.Vector3(-20, 0, 0))
+      var line = new Three.Line(geometry, material)
+      this.scene.add(line)
+      this.renderer.render(this.scene, this.camera)
     }
   }
 }

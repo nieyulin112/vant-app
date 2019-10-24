@@ -73,6 +73,9 @@ export default {
   width: 100%;
   z-index: 1;
   min-height: 100vh;
+  &:hover {
+    cursor: pointer;
+  }
 }
 .list-caontainer {
   margin-bottom: 1.2rem;

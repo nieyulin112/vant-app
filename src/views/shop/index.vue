@@ -24,6 +24,7 @@ export default {
 
 <style lang="less" scoped>
 .shop-index {
+  overflow-x: hidden;
   img {
     width: 100vw;
   }
