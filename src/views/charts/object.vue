@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="charts-line" id="container">
+  <div class="charts-object" id="container">
   </div>
 </template>
 
@@ -22,6 +22,7 @@ export default {
   },
   methods: {
     init() {
+      let object = new Three.Object3D()
       let container = document.getElementById('container')
       this.renderer = new Three.WebGLRenderer()
       this.renderer.setSize(window.innerWidth, window.innerHeight)
@@ -31,14 +32,13 @@ export default {
       this.camera.lookAt(0, 0, 0)
       this.scene = new Three.Scene()
       var material = new Three.LineBasicMaterial({color: 0x0000ff})
-      var geometry = new Three.Geometry();
-      geometry.vertices.push(new Three.Vector3(-10, 0, 0))
-      geometry.vertices.push(new Three.Vector3(0, 10, 0))
-      geometry.vertices.push(new Three.Vector3(10, 0, 0))
-      geometry.vertices.push(new Three.Vector3(20, 0, 0))
-      geometry.vertices.push(new Three.Vector3(-20, 0, 0))
-      var line = new Three.Line(geometry, material)
-      this.scene.add(line)
+      var geometry = new Three.Geometry()
+      var object1 = new Three.Object3D()
+      var object2 = new Three.Object3D()
+      object1.add(object2)
+      this.scene.add(object1)
+      object.matrixAutoUpdate  = false
+      object.updateMatrix()
       this.renderer.render(this.scene, this.camera)
     }
   }

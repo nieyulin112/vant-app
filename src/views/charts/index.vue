@@ -6,6 +6,7 @@
       <van-cell title="圆锥动画" is-link to="cylinder" />
       <van-cell title="足球动画" is-link to="footerBall" />
       <van-cell title="直线绘制" is-link to="line" />
+      <van-cell title="物体更新" is-link to="object" />
     </van-cell-group>
   </div>
 </template>

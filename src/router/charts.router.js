@@ -28,6 +28,11 @@ const line = resolve => {
     resolve(line)
   })
 }
+const object = resolve => {
+  import(/* webpackChunkName: 'object' */'../views/charts/object').then(object => {
+    resolve(object)
+  })
+}
 export default [{
   path: '/charts',
   name: 'charts',
@@ -84,6 +89,16 @@ export default [{
   component: line,
   meta: {
     title: '直线',
+    requireAuth: true,
+    keepAlive: false,
+    footer: false
+  }
+}, {
+  path: '/object',
+  name: 'object',
+  component: object,
+  meta: {
+    title: '物体',
     requireAuth: true,
     keepAlive: false,
     footer: false
