@@ -31,8 +31,6 @@ export default {
       this.camera.position.set(0, 0, 100)
       this.camera.lookAt(0, 0, 0)
       this.scene = new Three.Scene()
-      var material = new Three.LineBasicMaterial({color: 0x0000ff})
-      var geometry = new Three.Geometry()
       var object1 = new Three.Object3D()
       var object2 = new Three.Object3D()
       object1.add(object2)
