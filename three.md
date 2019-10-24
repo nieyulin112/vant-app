@@ -13,3 +13,8 @@
 if(WEBGL.isWebGLAvailable()) {
 } else {
 }
+
+
+
+
+重点了解透视相机、场景、渲染器、材质和网格

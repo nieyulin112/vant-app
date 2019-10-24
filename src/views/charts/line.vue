@@ -30,7 +30,8 @@ export default {
       this.camera.position.set(0, 0, 100)
       this.camera.lookAt(0, 0, 0)
       this.scene = new Three.Scene()
-      var material = new Three.LineBasicMaterial({color: 0x0000ff})
+      this.scene.background = new Three.Color(0x0f0f0f)
+      var material = new Three.LineBasicMaterial({color: 0xffffff})
       var geometry = new Three.Geometry();
       geometry.vertices.push(new Three.Vector3(-10, 0, 0))
       geometry.vertices.push(new Three.Vector3(0, 10, 0))
@@ -39,6 +40,9 @@ export default {
       geometry.vertices.push(new Three.Vector3(-20, 0, 0))
       var line = new Three.Line(geometry, material)
       this.scene.add(line)
+      console.log('renderer', this.renderer)
+      console.log('camera', this.camera)
+      console.log('line', line)
       this.renderer.render(this.scene, this.camera)
     }
   }
