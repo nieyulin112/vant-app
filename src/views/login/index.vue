@@ -14,6 +14,7 @@
 </template>
 
 <script>
+import getAppid from '../../libs/api/src/login'
 export default {
   data () {
     return {
@@ -21,6 +22,11 @@ export default {
     }
   },
   created() {
+    this.$api.login.getAppid().then(res => {
+      console.log('res', res);
+    }).catch(err => {
+      console.log('err', err);
+    })
     if(window.localStorage.getItem('token')) {
       this.$router.push({
         name: 'home'
